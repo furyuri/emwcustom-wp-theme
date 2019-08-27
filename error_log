@@ -1,0 +1,8 @@
+[11-Jul-2019 19:03:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/r5bdx9ai3uh6/public_html/wp-content/themes/emwcustom/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/r5bdx9ai3uh6/public_html/wp-content/themes/emwcustom/index.php on line 3
+[20-Jul-2019 19:35:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/r5bdx9ai3uh6/public_html/wp-content/themes/emwcustom/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/r5bdx9ai3uh6/public_html/wp-content/themes/emwcustom/index.php on line 3

@@ -1,0 +1,1123 @@
+/*
+Theme Name: EMW Custom Theme
+Theme URI: N/A
+Author: Uri Frazier
+Author URI: https://www.urifrazier.com
+Description: A basic theme using the Bootstrap framework.
+Version: 1.0
+Text Domain: bootstrapstarter
+*/
+
+@import 'colorpalette.less';
+@import 'fonts.less';
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+}
+
+body {
+    font-family: @normalFont;
+    color: lighten(@color1, 5%);
+    h1, h2, h3, h4, h5 {
+        font-family: @headingFont;
+        color: lighten(@color1, 5%);
+        line-height: 1.2;
+    }
+    article {
+        margin: 0 1em 1em;
+    }
+
+}
+
+footer {
+    padding: 1em;
+    font-size: .80em;
+    background-color: @color1;
+    color: lighten(@color1, 55%);
+    a {
+        color: lighten(@color3, 20%);
+        &:hover {
+        color: @lightColor;
+        }
+    }
+    h3 {
+        text-align: center;
+        margin: 0;
+        font-family: @normalFont;
+        font-size: 1.7em;
+        color: @lightColor;
+    }
+    i {
+        color: lighten(@color1, 35%);
+        transition: all .25s;
+        &:hover {
+            color: @lightColor;
+        }
+    }
+    .container-row {
+        padding: 1em;
+    }
+    p {
+        padding: 0 .5em;
+        text-align: center;
+        font-size: 1.25em;
+    }
+}
+
+// Classes
+
+.back-to-top {
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: 1.5em;
+}
+.basic-page-header {
+    h1 {
+        background-color: lighten(@color1, 20%);
+        color: lighten(@color3, 45%); 
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: .5em 0 .5em;
+        text-align: center; 
+        font-size: 3em;
+    }
+
+}
+.contact-section {
+    p {
+        font-size: 1.5em;
+    }
+}
+.container-row {
+    margin: 0 auto;
+    width: 100%;
+    .row {
+        #officePhoto1 {
+            background-image: url(images/officePhoto1.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-left: 0;
+            padding-right: 0;
+            //border: 1px solid gray;
+        }
+        .review-col {
+            // padding: 1em;            
+        }
+        #contactBlock1 {
+            padding: 1em;
+            text-align: center;
+            background: linear-gradient(to bottom, lighten(@color3, 40%), lighten(@color3, 47%));
+            color: @color1;
+            
+            .contact-section {
+                margin-bottom: 2em;
+            }
+        }
+    }
+
+}
+
+.contact-button {
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+.current-menu-item:before {
+      position: absolute;
+      left: 0;
+      width: 0; 
+      height: 0;
+      top: 25%;
+      content: " ";
+      border-top: 10px solid transparent;
+      border-left: 10px solid @color1;
+      border-bottom: 10px solid transparent;
+      border-right: 10px solid transparent;
+}
+
+.current-menu-item {
+    font-weight: bold;
+}
+.hidden {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+.homepage-review {
+    font-family: @headingFont;
+    font-weight: normal;
+    font-size: 1.5em;
+    color: lighten(@color1, 30%);
+    padding: 2em 1em;
+    margin-bottom: 0;
+    //border-bottom: 1px solid gray;
+}
+
+.jumbotron {
+    & > *{
+        animation-name: hero;
+        animation-duration: 2s;
+    }
+    background-image: url("../emwcustom/images/emwbg01.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: @lightColor;
+    font-family: @normalFont; 
+    margin-bottom: 0;
+    span.display-3 {
+        font-size: 2.5em;
+        font-family: @headingFont;
+        font-weight: light;
+        font-weight: light;
+        margin-top: 1em;
+        display: block;
+        margin-bottom: 0;
+        span {
+            display: block;
+        }
+    }
+    h1 {
+        margin-top: 1em;
+    }
+    p {
+        font-size: 1.4em;
+        max-width: 70%;
+        margin: .5em auto 2em;
+
+    }
+    p.lead {
+        display: none;
+    }
+    .btn-lg {
+        border-radius: 0;
+        border: 0;
+        background-color: lighten(@color5, 5%);
+        color: @color2;
+        line-height: .75;
+        margin-bottom: 1em;
+        border: 1px solid @color2;
+        width: 70%;
+        .glyphicon {
+            display: inline;
+            top:3px;
+            padding-left: 2px;
+        }
+        transition: all .25s;
+        &:hover {
+            background-color: lighten(@color2, 10%);
+            border-color: @color2;
+            color: @lightColor;
+        }
+        &:active {
+            transform: translateX(1px) translateY(1px);
+        }
+    }
+    .btn-lg:nth-of-type(2) {
+        background-color: @color1;
+        color: lighten(@color3, 30%);
+        border: 1px solid lighten(@color3, 30%);
+        margin-bottom: 2em;
+        transition: all .25s;
+        &:hover {
+            background-color: lighten(@color2, 10%);
+            border-color: @color2;
+            color: @lightColor;
+        }
+    }
+}
+.map-responsive{
+    margin-left: 1em;
+    margin-right: 1em;
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+.navbar-default {
+    background-color: @lightColor;
+    margin-bottom: 0;
+    padding: 1em 0;
+    border-bottom: 2px solid @color1;
+    .navbar-brand {
+        
+        font-family: @logoFont;
+        padding: 0 .5em;
+    }
+    
+    .navbar-toggle {
+        border: 0 solid lighten(@color1, 50%);
+        background: lighten(@color1, 70%) !important;
+
+        &:hover {
+            background: transparent !important;
+        }
+        
+        .icon-bar {
+          width: 22px;
+          transition: all 0.2s;
+          background-color: lighten(@color1, 40%);
+        }
+        .top-bar {
+          transform: rotate(44deg);
+          transform-origin: 10% 10%;
+        }
+        .middle-bar {
+          opacity: 0;
+        }
+        .bottom-bar {
+          transform: rotate(-45deg);
+          transform-origin: 10% 90%;
+        }
+    }
+    
+    .navbar-toggle.collapsed {
+        border: 1px solid lighten(@color1, 50%);
+      .top-bar {
+        transform: rotate(0);
+      }
+      .middle-bar {
+        opacity: 1;
+      }
+      .bottom-bar {
+        transform: rotate(0);
+      }
+    }
+
+    .navbar-nav {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;    
+        li {
+            border-bottom: 1px solid lighten(@color1, 60%);
+            text-align: center;
+            background-color: @lightColor;
+            a {
+                color: @color1;
+                font-family: @normalFont;
+                font-size: 1.2em;  
+                
+                &:hover {
+                    color: @color3;
+                }
+            }
+        }
+    }
+}
+.productBenefits {
+    font-size: 1.5em;
+}
+.product-button {
+    background-color: @color1;
+    color: lighten(@color3, 30%);
+    border: 1px solid lighten(@color3, 30%);
+    margin-bottom: 2em;
+    transition: all .25s;
+    border-radius: 0;
+    min-width: 8em;
+    &:hover {
+        background-color: lighten(@color2, 10%);
+        border-color: @color2;
+        color: @lightColor;
+    }
+    .glyphicon {
+        display: inline;
+        top: 3px;
+        padding-left: 2px;
+    }
+}
+
+.schedule-button, .contact-button {
+    background-color: @color1;
+    color: lighten(@color3, 30%);
+    border: 1px solid lighten(@color3, 30%);
+    margin-bottom: 2em;
+    transition: all .25s;
+    border-radius: 0;
+    width: 13em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    &:hover {
+        background-color: lighten(@color2, 10%);
+        border-color: @color2;
+        color: @lightColor;
+    }
+    .glyphicon {
+        display: inline;
+        top: 3px;
+        padding-left: 2px;
+    }
+}
+.services-row {
+    font-size: 1.2em;
+}
+.therapist-bio-section {
+    text-align: center;
+    color: @color1;
+    .bio-section-header {
+        font-size: 2em;
+        background-color: lighten(@color1, 5%);
+        color: lighten(@color3, 45%); 
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 1em 0 1em;
+    }
+    
+    .therapist-bio {
+        background: linear-gradient(to bottom, lighten(@color3, 40%), lighten(@color3, 47%));
+        padding-top: 3em;
+        border-bottom: 2px solid @lightColor;
+    }
+    article.profile-main {
+        text-align: left;
+        font-size: 1em;
+        padding: 0 1em 1em;
+    }
+    .row {
+        //padding: 0 1em;
+    }
+
+    .therapist-quote {
+        font-size: 1.5em;
+        font-family: @headingFont;
+        text-align: center  ;
+    }
+    .therapist-facts {
+        font-size: 1.3em;
+        padding-bottom: 1em;
+    }
+    
+
+    .therapist-license {
+        font-size: .85em;
+        text-align: right;
+
+    }
+}
+
+.wpcf7-form-control.wpcf7-text, .wpcf7-form-control.wpcf7-textarea {
+position: relative;
+max-width: 98%;
+    //source: https://theme.co/apex/forums/topic/contact-form-7-input-fields-not-responsive/
+}
+
+.scheduler-cookies {
+    margin-top: 1em;
+    font-size: 1em;
+    width: 20em;
+    margin-left: auto;
+    margin-right: auto;
+}
+// Animations 
+
+@keyframes hero {
+    from { opacity: 0;}
+    to   { opacity: 1;}
+}
+
+@keyframes scheduler-notice {
+    from { opacity: 1;}
+    to   { opacity: 0;}
+}
+
+@keyframes scheduler-notice-disappear {
+    from { height: 3em;}
+    to   { height: 0; font-size: 0;}
+}
+// ID's ------------------------------------------------------------------------------------------------
+    #contactContainer {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3em;
+        #contactForm1 {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+#comphyPhoto1 {
+    background-image: url(images/sheets.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 0;
+    padding-right: 0;
+    //border: 1px solid gray;
+}
+
+#comphyText1 {
+    h2 {
+        margin-bottom: 2em;
+    }
+    article {
+        margin-bottom: 1em;
+    }
+    div {
+        text-align: center;
+    }
+}
+#contactContainer {
+    h2 {
+        font-size: 1.8em;
+    }
+    padding: 1em;
+    #contactBlock {
+        margin-bottom: 2em;
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #emwOffice1 {
+        width: 100%;
+    }
+}
+#emwLogo {
+    margin-top: 5px;
+    height: 40px;
+    position: absolute;
+}
+
+#danaProfile, #jennyProfile {
+    border-radius: 50%;
+    max-width: 50%;
+    box-shadow: 0px 0px 5em #fff;
+}
+#home-schedule-block {
+    color: lighten(@color1, 5%);
+    padding: 1em;
+    text-align: center;
+    margin-bottom: 1em;
+
+    div {
+        
+        &> div:first-of-type {
+
+            border: none;
+            //padding: 0 2em;
+            margin: 0;
+            font-size: 1.5em;
+            text-align: center;
+        }
+        
+        &:nth-of-type(2) {
+            border: none;
+            padding: 0;
+            margin: 0;
+            .btn {
+                background-color: @color1;
+                color: lighten(@color3, 30%);
+                border: 1px solid lighten(@color3, 30%);
+                border-radius: 0;   
+                transition: all .25s;
+                &:hover {
+                    background-color: lighten(@color2, 10%);
+                    border-color: @color2;
+                    color: @lightColor;
+                }
+                &:active {
+                    transform: translateX(1px) translateY(1px);
+                }
+            }
+        }
+            &:after {
+                content: "";
+                clear: both;
+                display: table;
+                
+            }
+    }
+
+}
+#product-table {
+    margin: 1em;
+    font-size: 1.5em;
+    tr:first-of-type {
+        th {
+            background-color:  lighten(@color3, 45%);  
+            color: lighten(@color1, 20%);      
+        }
+    }
+
+    th {
+        background-color: lighten(@color1, 20%);
+        color: lighten(@color3, 45%);
+        h4 {
+            color: lighten(@color3, 45%);
+            text-align: center;
+            font-size: 1.5em;
+        }
+        h3 {
+            text-align: center;
+            font-size: 1.75em;
+            
+        }
+
+}
+    }
+
+#rates-table, #comphyText1, #reviewsText1 {
+    padding: 1em 2em;
+    background: linear-gradient(to bottom, lighten(@color3, 40%), lighten(@color3, 47%));
+    font-size: 1.5em;
+    h2 {
+        text-align: center;
+            margin: 1em auto .25em;
+            font-size: 1.75em;
+    }
+    td {
+        margin: 0;
+        &:nth-of-type(2) {
+            text-align: center;
+        }
+    }
+}
+
+#reviewsPhoto1 {
+    background-image: url(images/reviews.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 0;
+    padding-right: 0;
+    //border: 1px solid gray;
+}
+
+#reviewsText1 {
+    .product-button {
+        margin-left: auto;
+        margin-right: auto;
+        width: 75%;
+    }
+}
+#review-content, #review-content .wp-yelp-text, #review-content .wp-google-text {
+    h2 {
+        font-size: 2em;
+    }
+    font-size: 1.5em !important;
+    margin-top: 3em;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+    padding-bottom: 2em;
+    line-height: 1.5em !important;
+    div {
+        margin-bottom: 3em;
+    }
+    .direct-feedback {
+        p {
+            margin-bottom: 2em;
+        }
+        h4 {
+            font-size: 1.5em;
+        }
+    }
+}
+#services-section, #add-ons-section {
+    margin-bottom: 2em;
+    font-size: 1.25em;
+    h2 {
+        text-align: center;
+    }
+    h3 {
+        font-size: 1em;
+        padding: .5em 1em .5em 1em;
+        border-top: 1px solid lighten(@color1, 40%);
+        border-left: 1px solid lighten(@color1, 40%);
+        border-right: 1px solid lighten(@color1, 40%);
+        &:last-of-type {
+          border-bottom: 1px solid lighten(@color1, 40%);
+            &.open {
+                border-bottom: 0;
+            }
+        }
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    article {
+        display: none;
+        border-bottom: 1px solid lighten(@color1, 40%);
+        border-left: 1px solid lighten(@color1, 40%);
+        border-right: 1px solid lighten(@color1, 40%);
+        margin: 0;
+        
+    }
+    p {
+        padding: 0 1em;
+    }
+
+    .service-title {
+        cursor: pointer;
+        &:before {
+            border: 0.5em solid;
+            border-color: transparent transparent transparent lighten(@color3, 0%);
+            content: '';
+            display: inline-block;
+            height: 0;
+            margin-right: .1em;
+            vertical-align: middle;
+            width: 0;
+        }
+        &.open {
+            &:before {
+                border-color: lighten(@color3, 0%) transparent transparent transparent;
+            }
+        }
+
+    }
+}
+#socialMedia-icon {
+    text-align: center;
+}
+#servicesPhoto1 {
+    background-image: url(images/servicesPhoto1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 0;
+    padding-right: 0;
+    //border: 1px solid gray;
+}
+#yelp-review-section {
+    padding-top: 2em;
+    h2 {
+        text-align: center;
+        color: @color1;
+        padding-bottom: 1em;
+    }
+    #yelp-reviews {
+        padding: 1em 2em;
+        //background-color: @color1;
+    }
+
+}
+
+#schedulicity-block {
+    text-align: center;
+}
+#schedulicity-plugin {
+    margin-right: auto;
+    margin-left: auto;
+}
+.scheduler-loading-disappear {
+    //border: 1px solid gray;
+    animation-delay: 5s;
+    animation-name: scheduler-notice-disappear;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+#scheduler-notice {
+    padding: 0;
+    font-size: 1.25em;
+    animation-delay: 3s;
+    animation-name: scheduler-notice;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+// --------------------------- Responsive Media Queries ---------------------------------------
+    // Mobile ad-hoc------------------------------------------------------------------
+
+    // Make column div's size properly in mobile. Overriding matchHeight.js sizing.
+    @media only screen and (max-width : 767px) {
+        #officePhoto1, #servicesPhoto1, #comphyPhoto1, #reviewsPhoto1 {
+            min-height: 10em;
+        }
+        .col {
+            height: auto !important;
+        } 
+    }
+
+    // Make sure mobile menu showing on ipad 2 vertical orientation. ---------------------------
+
+@media (max-width: 769px) {
+      .navbar-header {
+          float: none;
+      }
+      .navbar-left,.navbar-right {
+          float: none !important;
+      }
+      .navbar-toggle {
+          display: block;
+      }
+      .navbar-collapse {
+          border-top: 1px solid transparent;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+      }
+      .navbar-fixed-top {
+          top: 0;
+          border-width: 0 0 1px;
+      }
+      .navbar-collapse.collapse {
+          display: none!important;
+      }
+      .navbar-nav {
+          float: none!important;
+          margin-top: 7.5px;
+      }
+      .navbar-nav>li {
+          float: none;
+      }
+      .navbar-nav>li>a {
+          padding-top: 10px;
+          padding-bottom: 10px;
+      }
+      .collapse.in{
+          display:block !important;
+      }
+    
+    //----
+    
+    .current-menu-item:before {
+          position: absolute;
+          left: 0;
+          width: 0; 
+          height: 0;
+          top: 25%;
+          content: " ";
+          border-top: 10px solid transparent;
+          border-left: 10px solid @color1;
+          border-bottom: 10px solid transparent;
+          border-right: 10px solid transparent;
+    }
+
+    .current-menu-item {
+        font-weight: bold;
+    }
+    
+}
+    // --------------------------------- Tablet -------------------------------------------
+@media screen and (min-width: 768px) {
+    .scheduler-cookies {
+        width: 30em;
+        font-size: 1.5em;
+    }
+    #contactContainer {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto; 
+        padding: 0;
+    }
+    #form-container {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 4em;
+    }
+    #map-section {
+        max-width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .productBenefits {
+        width: 30em;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5em;
+        margin-top: 3em;
+    }    
+    
+    #reviewsText1, #rates-table, #comphyText1 {
+        p, table, article {
+            width: 30em;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        p {
+            text-align: center;
+        }
+    }
+    .contact-section {
+}
+    hr {
+        display: none;
+    }
+    #map-button{
+        display: none;
+    }
+     #officePhoto1, #servicesPhoto1, #comphyPhoto1, #reviewsPhoto1 {
+        min-height: 25em;
+        .col {
+            height: auto !important;
+        }          .col {
+            height: auto !important;
+        }  
+    }   
+    .basic-page-header {
+        h1 {
+            //margin-bottom: 1.5em;
+        }
+
+    }
+
+.homepage-review {
+    font-size: 2em;
+    padding: 3em 5em;
+}
+    .btn-lg {
+        font-weight: bold;
+    }
+    .jumbotron {
+
+        span.display-3 {
+            font-size: 3.5em;
+        }
+        h1 {
+            margin-top: 1.5em;
+            margin-bottom: .5em;
+        }
+        p {
+            max-width: 60%;
+            font-size: 2em;
+        }
+        .btn-lg {
+            width: 15em;
+            padding: .5em .5em;
+            font-size: 1.75em;
+            font-weight: normal;
+        }
+        .btn-lg:nth-of-type(2) {
+            background-color: @color1;
+            color: lighten(@color3, 30%);
+            border: 1px solid lighten(@color3, 30%);
+            margin-bottom: 5em;
+        }
+    }
+
+    
+    #product-table {
+        margin-left: 20%;
+        margin-right: 20%;
+    } 
+.therapist-bio-section {
+    text-align: center;
+    .therapist-bio {
+        border-bottom: none;
+        padding-left: 3em;
+        padding-right: 3em;
+        &:first-of-type {
+            border-right: 2px solid @lightColor;
+        }
+    }
+    .bio-section-header {
+        margin-top: 0;
+        padding: 1em 0;
+    }
+    .row {
+        padding: 0;
+    }
+}
+//  ID's
+    
+    #emwLogo {
+        height: 50px;
+    }
+    #contactBlock1 {
+        font-size: 1em;
+    }
+    #danaProfile, #jennyProfile {
+        border-radius: 50%;
+    }
+    
+#review-content {
+    padding-left: 5em;
+    padding-right: 5em;
+    div:nth-of-type(3) {
+        p {
+            font-size: 1em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: @darkColor;
+        }
+        h4 {
+            font-size: 1.5em;
+        }
+    } 
+}
+
+#emwLogo {
+    margin-top: 5px;
+    height: 38px;
+    position: absolute;
+}
+
+#home-schedule-block {
+    padding: 1em 5%;
+}
+
+#services-section, #add-ons-section {
+    max-width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+}
+    
+.refocus {
+    display: none;
+}
+        
+}
+
+@media screen and (min-width: 769px) {
+    .current-menu-item:after {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 0;
+      margin-left: -10px;
+      vertical-align: middle;
+      content: "";
+      border-top: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid lighten(@color1, 40%);
+      border-left: 10px solid transparent;
+    }
+    .current-menu-item:before {
+      border-left: 0;
+    }
+}
+// -----------------------  Desktop - Laptop -------------------------------------------
+@media screen and (min-width: 1024px) {
+        .navbar-default {
+    .navbar-nav {
+        li {
+            border-bottom: 0;
+            padding-left: 0;
+            background-color: @lightColor;
+            font-size: 1em;
+            a {
+                padding-left: 1em;
+                padding-right: 1em;
+            }
+        }   
+    }
+    }
+}
+@media screen and (min-width: 1025px){
+    
+    #form-container {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 8em;
+    }
+    
+    #review-content {
+            padding-left: 1em;
+            padding-right: 1em;
+        div {
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+    }
+    .productBenefits {
+        width: 40em;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2em;
+    }    
+
+    #reviewsText1, #rates-table, #comphyText1 {
+        p, article {
+            width: auto;
+        }
+        p {
+            text-align: left;
+        }
+        table {
+            width: 100%;
+        }
+    }
+    .navbar-default {
+    .navbar-nav {
+        li {
+            border-bottom: 0;
+            padding-left: 0;
+            background-color: @lightColor;
+            font-size: 1em;
+            a {
+                padding-left: 1em;
+                padding-right: 1em;
+            }
+        }   
+    }
+    }
+    .services-row {
+        margin-left: 10em;
+        margin-right: 10em;
+    }
+    .therapist-bio-section {
+        .therapist-bio {
+            padding-left: 6em;
+            padding-right: 6em;
+        }
+    }
+    .top-row {
+        margin-bottom: 2em;
+    }
+    #home-schedule-block {
+        div {
+            padding: 1em;
+            div:first-of-type {
+                float: left;
+            }
+            div:nth-of-type(2){
+                line-height: 7em;
+            }
+        }
+        padding-left: 20%; 
+        padding-right: 20%;
+    }
+
+#services-section, #add-ons-section {
+
+    padding-left: 3em;
+    padding-right: 3
+        em;
+    h3 {
+        border: none;
+        font-size: 1.25em;
+        &:last-of-type {
+            border: none;
+        }
+    }
+    article {
+        display: block !important;
+        border: none;
+        
+    }
+     .service-title {
+         &:hover {
+             cursor:text;
+         }
+        &:before {
+            border: none;
+            content: none;
+            display: none;
+            height: 0;
+            margin-right: 0;
+        }
+        &.open {
+            &:before {
+                border: none;
+            }
+        }
+    }
+    
+    }
+
+}
